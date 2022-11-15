@@ -1,1 +1,1 @@
-# SeleniumPrviTest
+# Page Object Model pattern
