@@ -10,13 +10,11 @@ public class TestClass
     private HomePage _homePage;
 
     [SetUp]
-
     public void BeforeScenario()
     {
         WebDriver.Initialize();
         _loginPage = new LoginPage();
         _homePage = new HomePage();
-
     }
 
     [TearDown]
@@ -30,16 +28,21 @@ public class TestClass
 
     public void TC01_FillInputWithValidData_ShouldAllDataDisplayedInInput()
     {
-
         Login("execute", "automation");
+        _homePage.Initial.SendKeys("MN");
+        _homePage.Title("Mr.");
+        _homePage.FirstName.SendKeys("Marko");
+        _homePage.MiddleName.SendKeys("Naumovic");
+        _homePage.Female.Click();
+        _homePage.Hindi.Click();
+        _homePage.SaveButton.Click();
     }
 
     [Test]
     public void TC02_OpenPopUp_ShouldDisplayed()
     {
         Login("execute", "automation");
-
-    
+        _homePage.HtmlPopup.Click();
     }
 
 
@@ -47,8 +50,7 @@ public class TestClass
     public void TC03_OpenAlert_ShouldDisplayed()
     {
         Login("execute", "automation");
-
-     
+        _homePage.Alert();
     }
 
 
